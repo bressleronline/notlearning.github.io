@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="gamestyle.css" rel="stylesheet" type="text/css">
+  <script src="script.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Class</title>
+
+  <style>
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: auto; /* Enable scrolling */
+      background-color: #f0f0f0;
+      background-image: url(backround3.png);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100%;
+      min-width: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: filter 0.3s ease;
+      z-index: 0;
+    }
+
+    .box:hover::before {
+      filter: blur(5px);
+    }
+
+    .box .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .box:hover .overlay {
+      opacity: 1;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(to right, pink, purple, pink);
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="box" style="background-image: url('appimages/tiktok.jpg');" onclick="window.location.href='tiktok.html'">
+      <div class="overlay">TikTok</div>
+    </div>
+    <div class="box" style="background-image: url('appimages/youtube.jpg');" onclick="window.location.href='youtube.html'">
+      <div class="overlay">Youtube</div>
+    </div>
+    <div class="box" style="background-image: url('appimages/google.jpg');" onclick="window.location.href='google.html'">
+      <div class="overlay">Google</div>
+    </div>
+    <div class="box" style="background-image: url('appimages/twitter.jpg');" onclick="window.location.href='twitter.html'">
+      <div class="overlay">Twitter</div>
+    </div>
+    <div class="box" style="background-image: url('appimages/cloudgaming.jpg');" onclick="window.location.href='xboxcloudgaming.html'">
+      <div class="overlay">Xbox Cloud Gaming</div>
+    </div>
+    <div class="box" style="background-image: url('image6.jpg');" onclick="window.location.href='page6.html'">
+      <div class="overlay">Name 6</div>
+    </div>
+    <div class="box" style="background-image: url('image7.jpg');" onclick="window.location.href='page7.html'">
+      <div class="overlay">Name 7</div>
+    </div>
+    <div class="box" style="background-image: url('image8.jpg');" onclick="window.location.href='page8.html'">
+      <div class="overlay">Name 8</div>
+    </div>
+    <div class="box" style="background-image: url('image9.jpg');" onclick="window.location.href='page9.html'">
+      <div class="overlay">Name 9</div>
+    </div>
+    <div class="box" style="background-image: url('image10.jpg');" onclick="window.location.href='page10.html'">
+      <div class="overlay">Name 10</div>
+    </div>
+    <div class="box" style="background-image: url('image11.jpg');" onclick="window.location.href='page11.html'">
+      <div class="overlay">Name 11</div>
+    </div>
+    <div class="box" style="background-image: url('image12.jpg');" onclick="window.location.href='page12.html'">
+      <div class="overlay">Name 12</div>
+    </div>
+    <div class="box" style="background-image: url('image13.jpg');" onclick="window.location.href='page13.html'">
+      <div class="overlay">Name 13</div>
+    </div>
+    <div class="box" style="background-image: url('image14.jpg');" onclick="window.location.href='page14.html'">
+      <div class="overlay">Name 14</div>
+    </div>
+    <div class="box" style="background-image: url('image15.jpg');" onclick="window.location.href='page15.html'">
+      <div class="overlay">Name 15</div>
+    </div>
+  </div>
+  <button class="home-button" onclick="goToHomePage()">Home</button>
+
+  <script>
+    function goToHomePage() {
+      window.location.href = '/';
+    }
+  </script>
+</body>
+
+</html>

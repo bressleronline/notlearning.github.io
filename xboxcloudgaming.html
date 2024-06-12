@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Xbox Cloud Gaming</title>
+
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      background-image: url(backround3.png);
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 73%;
+      height: 73%;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .fullscreen-button,
+    .home-button {
+      position: absolute;
+      background: linear-gradient(to right, pink, purple, pink);
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .fullscreen-button {
+      bottom: 10px;
+      right: 20px;
+      background: linear-gradient(to right, #39FF14, green, #39FF14);
+      color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .fullscreen-button:hover {
+      background: #293996;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .error-message {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <iframe id="gameFrame" src="https://v4-nu-khaki.vercel.app/service/hvtrs8%2F-wuw%2Cx%60oz.aoo%2Fgn%2Fuq%2Frlcy" onload="focusGame()"></iframe>
+    <button class="fullscreen-button" onclick="toggleFullScreen()">Fullscreen</button>
+  </div>
+  <button class="home-button" onclick="goToHomePage()">Home</button>
+  <div class="error-message">If "404 Not Found" appears, click Home that is located underneath 404 not found and then click Refresh on your keyboard or top of your tab</div>
+
+  <script>
+    function toggleFullScreen() {
+      var iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { /* Firefox */
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+        iframe.msRequestFullscreen();
+      }
+      // Focus the iframe after entering fullscreen
+      iframe.focus();
+    }
+
+    function focusGame() {
+      var iframe = document.getElementById('gameFrame');
+      iframe.focus();
+    }
+
+    function goToHomePage() {
+      window.location.href = '/';
+    }
+  </script>
+</body>
+
+</html>
+
+<script>
+  window.addEventListener('keydown', function (e) {
+    if(e.key === '`') {
+      window.open('https://classroom.google.com/u/0/h', '_blank');
+    }
+  }, false);
+</script>
